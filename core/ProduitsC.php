@@ -36,12 +36,12 @@ class ProduitC {
         catch (Exception $e){
             echo 'Erreur: '.$e->getMessage();
         }
-		
-	}
+		}
+	
 	
 
 	function afficher_produit(){
-		$sql="SElECT id,nom,quantite,description,poids,gout,prix From produits";
+		$sql="SElECT id,nom,quantite,description,poids,gout,prix,image From produits";
 		$db = config::getConnexion();
 		try{
 		$liste=$db->query($sql);
@@ -69,33 +69,28 @@ class ProduitC {
 
 
 	function modifier_produit($produit,$id){
-		$sql="UPDATE produits SET id=:id, nom=:nom,prenom=:prenom,nbHeures=:nbH,tarifHoraire=:tarifH WHERE id=:id";
+		$sql="UPDATE produits SET  nom=:nom,quantite=:quantite,description=:description,poids=:poids,gout=:gout,prix=:prix,image=:image WHERE id=:id";
 		
 		$db = config::getConnexion();
 try{		
-        $req=$db->prepare($sql);
-        					$id=$produit->getid();
-							$type=$produit->gettype();
+        $req=$db->prepare($sql);       					
 					        $nom=$produit->getnom();
 					        $quantite=$produit->getquantite();
-					        $cat_id=$produit->getidcat();
+					       $image=$produit->getimage();
 					        $prix=$produit->getprix();
 					        $description=$produit->getdescription();
-					        $ingredient=$produit->getingredient();
+					   
 					        $gout=$produit->getgout();
 					        $poids=$produit->getpoids();	
-					        $image=$produit->getimage();
+					       
 
 
-		$datas = array(':id'=>$id, ':type'=>$type, ':nom'=>$nom,':quantite'=>$quantite,':cat_id'=>$cat_id,':prix'=>$prix,':description'=>$description,':ingredient'=>$ingredient, ':gout'=>$gout,':poids'=>$poids,':image'=>$image);
-									$req->bindValue(':id',$id);
-									$req->bindValue(':type',$type);
+		$datas = array( ':nom'=>$nom,':quantite'=>$quantite,':description'=>$description,':poids'=>$poids,':gout'=>$gout,':prix'=>$prix);
+									$req->bindValue(':id',$id);									
 									$req->bindValue(':nom',$nom);
-									$req->bindValue(':quantite',$quantite);
-									$req->bindValue(':cat_id',$cat_id);
+									$req->bindValue(':quantite',$quantite);						
 									$req->bindValue(':prix',$prix);
-									$req->bindValue(':description',$description);
-									$req->bindValue(':ingredient',$ingredient);
+									$req->bindValue(':description',$description);								
 									$req->bindValue(':gout',$gout);
 									$req->bindValue(':poids',$poids);
 									$req->bindValue(':image',$image);
@@ -123,6 +118,111 @@ try{
         }
 	}
 	
-}
 
+function afficherbestProduit()
+   {
+       $sql="SELECT * FROM produits order by note_p desc limit 0,1 ";
+       $db =config::getConnexion();
+       try{
+        $list=$db->query($sql);
+        return $list;
+       }
+         catch (Exception $e)
+    { die('Erreur:'.$e->getMessage());}
+   }  
+
+function rechercher_produit($mot)
+   {
+       $sql="SELECT * FROM produits where nom like'%".$mot."%'or id like'%".$mot."%' or type like'%".$mot."%' or gout'%".$mot."%'";
+ 
+       $db =config::getConnexion();
+       try{
+        $list=$db->query($sql);
+        return $list;
+       }
+         catch (Exception $e)
+    { die('Erreur:'.$e->getMessage());}
+   }
+
+
+
+public static function afficherProd($id_categorie)
+   { $db =config::getConnexion();
+       $sql="SELECT * FROM produits where cat_id=:id_categorie and";
+    $p=$db->prepare($sql);
+    $p->bindParam(':id_categorie',$id_categorie);
+       
+          $p->execute();
+              
+                 return $p->fetchAll();
+      
+   } 
+
+   public static function affichage_cat_rech($id_categorie,$mot)
+   { $db =config::getConnexion();
+       $sql="SELECT * FROM produits where cat_id=:id_categorie and nom like'%".$mot."%'or id like'%".$mot."%' or type like'%".$mot."%' or gout'%".$mot."%'";
+    $p=$db->prepare($sql);
+    $p->bindParam(':id_categorie',$id_categorie);
+       
+          $p->execute();
+              
+                 return $p->fetchAll();
+      
+   } 
+
+   public static function recherche_range($min,$max)
+   { $db =config::getConnexion();
+       $sql="SELECT * FROM produits where prix between :min and :max";
+    $p=$db->prepare($sql);
+    $p->bindParam(':min',$min);
+   $p->bindParam(':max',$max);
+       
+          $p->execute();
+              
+                 return $p->fetchAll();
+      
+   } 
+      public static function afficherProd_triee($id_categorie,$num)
+   { $db =config::getConnexion();
+   	if($id_categorie!=0)
+   {$sql="SELECT * FROM produits where cat_id=:id_categorie order by id";
+      if($num==1) {$sql="SELECT * FROM produits where cat_id=:id_categorie order by nom";}
+      if($num==2) {$sql="SELECT * FROM produits where cat_id=:id_categorie order by type";}
+      if($num==3) {$sql="SELECT * FROM produits where cat_id=:id_categorie order by prix";}
+      if($num==4) {$sql="SELECT * FROM produits where cat_id=:id_categorie order by prix desc";}
+    $p=$db->prepare($sql);
+    $p->bindParam(':id_categorie',$id_categorie);
+       
+          $p->execute();
+              
+                 return $p->fetchAll();
+      }
+      else
+      {
+      	$sql="SELECT * FROM produits order by id";
+      if($num==1) {$sql="SELECT * FROM produits order by nom";}
+      if($num==2) {$sql="SELECT * FROM produits order by type";}
+      if($num==3) {$sql="SELECT * FROM produits order by prix";}
+      if($num==4) {$sql="SELECT * FROM produits order by prix desc";}
+    $p=$db->prepare($sql);       
+          $p->execute();              
+                 return $p->fetchAll();
+      }
+   } 
+
+
+/*
+    public function getstats()
+    {
+        $sql="
+select count(produits.nom_p) as val,categorie.nom as nom_pp from produits inner join categorie on categorie.id=produits.id_categorie group by nom_pp";
+        $db =config::getConnexion();
+        $pst=$db->prepare($sql);
+        $pst->execute();
+        return $pst->fetchAll();
+    }
+*/
+
+
+}
 ?>

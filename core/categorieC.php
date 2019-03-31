@@ -58,7 +58,7 @@ class categorieC {
 		$db = config::getConnexion();
 try{		
         $req=$db->prepare($sql);
-        					$id=$categorie->getid();							
+        												
 					        $nom=$categorie->getnom();					        
 					        $description=$categorie->getdescription();					       
 
@@ -92,5 +92,21 @@ try{
 	}
 	
 }
+
+    
+       function rechercher_categorie($mot)
+   {
+       $sql="SELECT * FROM categorie where id like'%".$mot."%'or nom like'%".$mot."%' ";
+ 
+       $db =config::getConnexion();
+       try{
+        $list=$db->query($sql);
+        return $list;
+       }
+         catch (Exception $e)
+    { die('Erreur:'.$e->getMessage());}
+   }
+    
+
 
 ?>

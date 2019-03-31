@@ -43,6 +43,18 @@ class abonementC {
         }	
 	}
 
+	function afficher_abonement_front(){
+		$sql="SElECT * From abonement";
+		$db = config::getConnexion();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }	
+	}
+
 
 
 	function supprimer_abonement($idd){
@@ -60,7 +72,7 @@ class abonementC {
 
 
 	function modifier_abonement($abonement,$id){
-		$sql="UPDATE abonement SET nom_abonement=:nom_abonement,cour=:cour,duree=:duree,prix=:prix WHERE id=:id"; //image=:imag
+		$sql="UPDATE abonement SET nom_abonement=:nom_abonement,cour=:cour,duree=:duree,prix=:prix,image=:image WHERE id=:id"; 
 		
 		$db = config::getConnexion();
 try{		
@@ -69,16 +81,16 @@ try{
 					        $cour=$abonement->getcour();
 					        $duree=$abonement->getduree();
 					        $prix=$abonement->getprix();	
-					       // $image=$abonement->getimage();
+					       $image=$abonement->getimage();
 
 
-		$datas = array(':nom_abonement'=>$nom_abonement,':cour'=>$cour,':duree'=>$duree,':prix'=>$prix);//':image=>$image'
+		$datas = array(':nom_abonement'=>$nom_abonement,':cour'=>$cour,':duree'=>$duree,':prix'=>$prix, ':image'=>$image);
 									$req->bindValue(':id',$id);
 									$req->bindValue(':nom_abonement',$nom_abonement);
 									$req->bindValue(':cour',$cour);
 									$req->bindValue(':duree',$duree);
 									$req->bindValue(':prix',$prix);
-									//$req->bindValue(':image',$image);
+									$req->bindValue(':image',$image);
 		
             $s=$req->execute();
         }
@@ -102,6 +114,23 @@ try{
         }
 	}
 	
-}
 
+
+
+
+function acheter_abonement($id_abonement,$id_client){
+		$sql="insert into client (id_abonement) values (:id_abonement) where id=:id_client";
+		$db = config::getConnexion();
+		try{
+		        	$req=$db->prepare($sql);
+									$req->bindValue(':id_abonement',$id_abonement);				
+		            $req->execute();		           
+        }
+        catch (Exception $e){
+            echo 'Erreur: '.$e->getMessage();
+        }
+		
+	}
+
+	}
 ?>
