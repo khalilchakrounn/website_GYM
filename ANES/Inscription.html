@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>INSCRIPTION</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_form.css">
+    <link rel="stylesheet" href="css/main2.css">
+    <link rel="stylesheet" href="css/linearicons2.css">
+    <link rel="stylesheet" href="css/themify-icons2.css">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/util_form.css">
+  <link rel="stylesheet" type="text/css" href="css/main_form.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="../css/style_form.css">
+  <style>
+   html {
+    height: 100%;
+    background-image: url('images/bg_2.jpg') /* fallback for old browsers */
+    
+}
+ 
+</style>
+
+
+  </head>
+  <body   style="background-image: url('images/bg_2.jpg')">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+         <a  href="index.html"><img src="images\logo.png"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item "><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="program.html" class="nav-link">Program</a></li>
+            <li class="nav-item "><a href="coaches.html" class="nav-link">Coaches</a></li>
+            <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+            <li class="nav-item"><a href="produits.html" class="nav-link">Produits</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item active" ><a href="inscription.html" class="nav-link">Inscription</a></li>
+          </ul>
+       
+
+            
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- END nav -->
+
+<section class="hero-wrap js-fullheight" >
+      
+     
+    
+       <div >
+
+
+ <div  class="col-md-5 col-md-offset-3"  style=" top: 70px;left: 30px">
+  
+   <form method="post" id="register_form" method="POST" action="ajoutclient.php">
+  
+    <ul id="progressbar" align="center">
+     <li class="nav-item">
+      <a class="nav-link active_tab1" style="border:2px " id="list_login_details">Account Details</a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link inactive_tab1" id="list_personal_details" style="border:2px  ">Personal Details</a>
+     </li>
+  <li class="nav-item">
+      <a class="nav-link inactive_tab1" id="list_contact_details" style="border:2px ">Contact Details</a>
+     </li>
+    </ul>
+   
+
+    <div class="tab-content" style="margin-top:16px;">
+
+     <div class="tab-pane active" id="login_details">
+         <h2 class="fs-title">Create your account</h2>
+                <h3 class="fs-subtitle">This is step 1</h3>
+      <div class="panel panel-default">
+   
+       <div class="panel-body">
+           <div class="form-group">
+         <label>Username</label>
+         <input type="text" name="username" id="username" class="form-control" required  placeholder="Username..."/>
+         <span id="error_username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+         <label>Email</label>
+         <input type="text" name="email" id="email" class="form-control" placeholder="email" />
+         <span id="error_email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+         <label>Enter Password</label>
+         <input type="password" name="password" id="password" class="form-control"  placeholder="Password"/>
+         <span id="error_password" class="text-danger"></span>
+        </div>
+            <div class="form-group">
+         <label>Re-enter Password</label>
+         <input type="password" name="password2" id="password2" class="form-control"  placeholder="confirm Password"/>
+         <span id="error_password2" class="text-danger"></span>
+        </div>
+       
+        <div align="center">
+         <button type="button" name="btn_login_details" id="btn_login_details" class="btn btn-info btn-lg">Next</button>
+        </div>
+        <br />
+       </div>
+      </div>
+     </div>
+
+     <!------------------------------------------------------------------------->
+      <!--Fin page1--> 
+      <!------------------------------------------------------------------------->
+    
+     <div class="tab-pane fade" id="personal_details">
+         <h2 class="fs-title">Create your account</h2>
+                <h3 class="fs-subtitle">This is step 2</h3>
+      <div class="panel panel-default">
+       
+       <div class="panel-body">
+        <div class="form-group">
+         <label>Enter First Name</label>
+         <input type="text" name="first_name" id="first_name" class="form-control" />
+         <span id="error_first_name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+         <label>Enter Last Name</label>
+         <input type="text" name="last_name" id="last_name" class="form-control" />
+         <span id="error_last_name" class="text-danger"></span>
+        </div>
+        <div class="form-group" id="gen">
+         <label>Gender</label>
+         <label class="radio-inline">
+          <input type="radio" id ="one" name="gender" value="male" checked> Male
+         </label>
+         <label class="radio-inline">
+          <input type="radio" id ="two" name="gender" value="female"> Female
+         </label>
+           <span id="error_gender" class="text-danger"></span>
+        </div>
+
+           <div class="form-group">
+      <label>Birthday </label>
+      <br>
+          <input <input type="date" class="dataaa" name="dateofbirth" id="dateofbirth"    required >
+            <span id='date'></span><br>
+        </div>
+       <div class="form-group">
+      <label>select profile picture </label>
+      <br>
+         <input type="file" name="img" onchange="previewFile()"><br>
+         <img  id="output"   style="  height:60px  ;width:50px ; position: absolute; top: 450px; right: 20%"    >
+         
+        </div>
+      <br>
+        <div align="center">
+         <button type="button" name="previous_btn_personal_details" id="previous_btn_personal_details" class="btn btn-default btn-lg">Previous</button>
+      <button type="button" name="btn_personal_details" id="btn_personal_details" class="btn btn-info btn-lg">Next</button>
+        </div>
+</div>
+</div>
+</div>
+        <!------------------------------------------------------------------------->
+      <!--Fin page2--> 
+      <!------------------------------------------------------------------------->
+         <div class="tab-pane fade" id="contact_details">
+          <h2 class="fs-title">Create your account</h2>
+                <h3 class="fs-subtitle">This is the last step</h3>
+      <div class="panel panel-default">
+      
+       <div class="panel-body">
+          <div class="form-group">
+         <label>Enter Mobile No.</label>
+         <input type="text" name="mobile_no" id="mobile_no" class="form-control" />
+         <span id="error_mobile_no" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+         <label>Enter Address</label>
+         <textarea name="address" id="address" class="form-control"></textarea>
+         <span id="error_address" class="text-danger"></span>
+        </div>
+
+      <div class="form-group">
+            <div class="contact100-form-checkbox">
+              <input class="input-checkbox100" id="ckb" type="checkbox" name="ckb">
+              <label class="label-checkbox100" for="ckb">
+                <span class="txt1">
+                  I agree to the
+                  <a href="term.txt"  target="_blank"  class="txt2 hov1">
+                    Terms of User
+                  </a>
+                </span>
+                <br>
+                 <span id="error_term" class="text-danger"></span>
+               
+              </label>
+          </div>
+        </div>
+
+        <br />
+        <div align="center">
+         <button type="button" name="previous_btn_contact_details" id="previous_btn_contact_details" class="btn btn-default btn-lg">Previous</button>
+         <button type="button" name="btn_contact_details" id="btn_contact_details" class="btn btn-success btn-lg">Register</button>
+        </div>
+       
+       </div>
+      </div>
+     </div>
+
+    </div>
+   </form>
+ </div>
+
+</div>
+
+
+   </section>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+     <br>
+  <br>
+  <br>
+  <br>
+  <br> 
+      <br>
+  <br>
+     <br>
+  <br>
+ 
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+
+
+
+<script>
+   function previewFile(){
+       var preview = document.getElementById('output');
+       var file    = document.querySelector('input[type=file]').files[0]; 
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); 
+       } else {
+           preview.src = "https://www.cbdloire.fr/wa_images/profil%20vide_1.png?v=1d0lgmf";
+       }
+  }
+
+  previewFile(); 
+
+/////////////////////////////////////////////////////////////////////////////////////
+ //Fin scirpt upload image //////////////////
+ ////////////////////////////////////////////////////////////////////////////////
+
+        </script>
+
+
+<script>
+  /////////////////////////////////////////////////////////////////////////////////////
+ //Script validation //////////////////
+ ////////////////////////////////////////////////////////////////////////////////
+$(document).ready(function(){
+ 
+ $('#btn_login_details').click(function(){
+  
+  var error_email = '';
+  var error_password = '';
+  var error_password2='';
+   var error_username = '';
+  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  var userValid = /^[a-zA-Z0-9]+$/; 
+ if($.trim($('#username').val()).length == 0)
+  {
+   error_username = 'username is required';
+   $('#error_username').text(error_username);
+   $('#username').addClass('has-error');
+  }
+  else
+  {
+   if (!userValid.test($('#username').val()))
+   {
+     error_username = 'Invalid Username';
+    $('#error_username').text(error_username);
+    $('#username').addClass('has-error');
+   }
+   else
+   {
+    error_username = '';
+    $('#error_username').text(error_username);
+    $('#username').removeClass('has-error');
+   }
+  }
+
+  if($.trim($('#email').val()).length == 0)
+  {
+   error_email = 'Email is required';
+   $('#error_email').text(error_email);
+   $('#email').addClass('has-error');
+  }
+  else
+  {
+   if (!filter.test($('#email').val()))
+   {
+    error_email = 'Invalid Email';
+    $('#error_email').text(error_email);
+    $('#email').addClass('has-error');
+   }
+   else
+   {
+    error_email = '';
+    $('#error_email').text(error_email);
+    $('#email').removeClass('has-error');
+   }
+  }
+  
+  if($.trim($('#password').val()).length == 0)
+  {
+   error_password = 'Password is required';
+   $('#error_password').text(error_password);
+   $('#password').addClass('has-error');
+  }
+  else
+  {
+   error_password = '';
+   $('#error_password').text(error_password);
+   $('#password').removeClass('has-error');
+  }
+
+if($.trim($('#password2').val()).length == 0)
+{
+    error_password2 = 'Password is required';
+   $('#error_password2').text(error_password2);
+   $('#password2').addClass('has-error');
+}
+else
+{
+   if($.trim($('#password').val())!=$.trim($('#password2').val()))
+
+  {
+   error_password2 = ' the two password are not identical ';
+   $('#error_password2').text(error_password2);
+   $('#password2').addClass('has-error');
+  }
+  else
+  {
+   error_password2 = '';
+   $('#error_password2').text(error_password2);
+   $('#password2').removeClass('has-error');
+  }
+
+}
+
+
+  if(error_email != '' || error_password != '' || error_password2!='' || error_username!='' )
+  {
+   return false;
+  }
+  else
+  {
+   $('#list_login_details').removeClass('active active_tab1');
+   $('#list_login_details').removeAttr('href data-toggle');
+   $('#login_details').removeClass('active');
+   $('#list_login_details').addClass('inactive_tab1');
+   $('#list_personal_details').removeClass('inactive_tab1');
+   $('#list_personal_details').addClass('active_tab1 active');
+   $('#list_personal_details').attr('href', '#personal_details');
+   $('#list_personal_details').attr('data-toggle', 'tab');
+   $('#personal_details').addClass('active in');
+  }
+ });
+ 
+ $('#previous_btn_personal_details').click(function(){
+  $('#list_personal_details').removeClass('active active_tab1');
+  $('#list_personal_details').removeAttr('href data-toggle');
+  $('#personal_details').removeClass('active in');
+  $('#list_personal_details').addClass('inactive_tab1');
+  $('#list_login_details').removeClass('inactive_tab1');
+  $('#list_login_details').addClass('active_tab1 active');
+  $('#list_login_details').attr('href', '#login_details');
+  $('#list_login_details').attr('data-toggle', 'tab');
+  $('#login_details').addClass('active in');
+ });
+ 
+
+/////////////////////////////////////////////////////////////////////////////////////
+ //Fin verification page1 //////////////////
+ ////////////////////////////////////////////////////////////////////////////////
+
+
+
+ $('#btn_personal_details').click(function(){
+  var error_first_name = '';
+  var error_last_name = '';
+  var error_gender ='';
+  var nameValid = /^[a-zA-Z]+$/; 
+  
+  if($.trim($('#first_name').val()).length == 0)
+  {
+   error_first_name = 'First Name is required';
+   $('#error_first_name').text(error_first_name);
+   $('#first_name').addClass('has-error');
+  }
+  else {
+     if (!nameValid.test($('#first_name').val()))
+   {
+     error_first_name = 'Format invalid';
+    $('#error_first_name').text(error_first_name);
+    $('#first_name').addClass('has-error');
+   }
+   else
+  {
+   error_first_name = '';
+   $('#error_first_name').text(error_first_name);
+   $('#first_name').removeClass('has-error');
+  }
+  }
+
+  if($.trim($('#last_name').val()).length == 0)
+  {
+   error_last_name = 'Last Name is required';
+   $('#error_last_name').text(error_last_name);
+   $('#last_name').addClass('has-error');
+  }
+   else {
+     if (!nameValid.test($('#last_name').val()))
+   {
+     error_last_name = 'Format invalid';
+    $('#error_last_name').text(error_last_name);
+    $('#last_name').addClass('has-error');
+   }
+  else
+  {
+   error_last_name = '';
+   $('#error_last_name').text(error_last_name);
+   $('#last_name').removeClass('has-error');
+  }
+}
+if(($.trim($('#one').val()).checked == false) &&($.trim($('#two').val()).checked == false)  )
+  {
+   error_gender = 'obligatoire';
+   $('#error_gender').text(error_gender);
+   $('#gender').addClass('has-error');
+  }
+  else
+  {
+   error_gender = '';
+   $('#error_gender').text(error_gender);
+   $('#gender').removeClass('has-error');
+  }
+
+
+  if(error_first_name != '' || error_last_name != '')
+  {
+   return false;
+  }
+   else
+  {
+   $('#list_personal_details').removeClass('active active_tab1');
+   $('#list_personal_details').removeAttr('href data-toggle');
+   $('#personal_details').removeClass('active');
+   $('#list_personal_details').addClass('inactive_tab1');
+   $('#list_contact_details').removeClass('inactive_tab1');
+   $('#list_contact_details').addClass('active_tab1 active');
+   $('#list_contact_details').attr('href', '#contact_details');
+   $('#list_contact_details').attr('data-toggle', 'tab');
+   $('#contact_details').addClass('active in');
+  }
+ });
+ 
+ $('#previous_btn_contact_details').click(function(){
+  $('#list_contact_details').removeClass('active active_tab1');
+  $('#list_contact_details').removeAttr('href data-toggle');
+  $('#contact_details').removeClass('active in');
+  $('#list_contact_details').addClass('inactive_tab1');
+  $('#list_personal_details').removeClass('inactive_tab1');
+  $('#list_personal_details').addClass('active_tab1 active');
+  $('#list_personal_details').attr('href', '#personal_details');
+  $('#list_personal_details').attr('data-toggle', 'tab');
+  $('#personal_details').addClass('active in');
+ });
+  /////////////////////////////////////////////////////////////////////////////////////
+ //Fin verification page2 //////////////////
+ ////////////////////////////////////////////////////////////////////////////////
+
+$('#btn_contact_details').click(function(){
+  var error_address = '';
+  var error_mobile_no = '';
+  var error_term='';
+  var mobile_validation = /^\d{8}$/;
+  if($.trim($('#address').val()).length == 0)
+  {
+   error_address = 'Address is required';
+   $('#error_address').text(error_address);
+   $('#address').addClass('has-error');
+  }
+  else
+  {
+   error_address = '';
+   $('#error_address').text(error_address);
+   $('#address').removeClass('has-error');
+  }
+  
+
+  if($.trim($('#mobile_no').val()).length == 0)
+  {
+   error_mobile_no = 'Mobile Number is required';
+   $('#error_mobile_no').text(error_mobile_no);
+   $('#mobile_no').addClass('has-error');
+  }
+  else
+  {
+   if (!mobile_validation.test($('#mobile_no').val()))
+   {
+    error_mobile_no = 'Invalid Mobile Number';
+    $('#error_mobile_no').text(error_mobile_no);
+    $('#mobile_no').addClass('has-error');
+   }
+   else
+   {
+    error_mobile_no = '';
+    $('#error_mobile_no').text(error_mobile_no);
+    $('#mobile_no').removeClass('has-error');
+   }
+  }
+
+if( $('input[name="ckb"]').is(':checked') )
+  {
+    error_term = '';
+   $('#error_term').text(error_term);
+   $('#ckb').removeClass('has-error');
+  }
+  else
+  {
+     error_term = 'term of use not checked';
+   $('#error_term').text(error_term);
+   $('#ckb').addClass('has-error');
+  }
+
+
+  if(error_address != '' || error_mobile_no != '' || error_term !='')
+  {
+   return false;
+  }
+  else
+  {
+   $('#btn_contact_details').attr("disabled", "disabled");
+   $(document).css('cursor', 'prgress');
+   $("#register_form").submit();
+  }
+  
+ });
+ 
+});
+ 
+
+</script>
+
+  </body>
+</html>  
